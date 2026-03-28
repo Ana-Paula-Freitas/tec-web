@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -12,3 +12,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 require __DIR__.'/settings.php';
+
+Route::resource('usuarios', App\Http\Controllers\UsuarioController::class);
