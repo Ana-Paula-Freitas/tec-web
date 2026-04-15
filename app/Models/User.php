@@ -31,4 +31,12 @@ class User extends Authenticatable
             'two_factor_confirmed_at' => 'datetime',
         ];
     }
+
+    public function enrollments() {
+        return $this->hasMany(Enrollment::class);
+    }
+
+    public function courses() {
+        return $this->belongsToMany(Course::class, 'enrollments');
+    }
 }

@@ -1,5 +1,7 @@
 <?php
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -13,4 +15,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 require __DIR__.'/settings.php';
 
-Route::resource('usuarios', App\Http\Controllers\UsuarioController::class);
+Route::resource('users', UserController::class);
+Route::resource('enrollments', EnrollmentController::class);
+Route::resource('courses', CourseController::class);

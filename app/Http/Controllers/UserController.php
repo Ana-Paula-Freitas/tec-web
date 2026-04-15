@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsuarioController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $usuarios = \App\Models\User::all();
-        return response()->json($usuarios);
+        $users = \App\Models\User::all();
+        return response()->json($users);
     }
 
     /**
