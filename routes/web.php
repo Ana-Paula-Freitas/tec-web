@@ -1,7 +1,7 @@
 <?php
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -12,6 +12,12 @@ Route::inertia('/', 'welcome', [
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'dashboard')->name('dashboard');
 });
+
+Route::get('/novo/', function() {
+    return view('novo');
+});
+
+Route::get('/usuarios', [UserController::class, 'index']);
 
 require __DIR__.'/settings.php';
 
