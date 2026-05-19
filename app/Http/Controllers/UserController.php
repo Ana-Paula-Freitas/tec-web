@@ -12,7 +12,7 @@ class UserController extends Controller
     public function index()
     {
         $users = \App\Models\User::all();
-        return response()->json($users);
+        return view('user.index', compact('users'));
     }
 
     /**
@@ -36,7 +36,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = \App\Models\User::findOrFail($id);
+        return view('user.usuarios', compact('user'));
     }
 
     /**

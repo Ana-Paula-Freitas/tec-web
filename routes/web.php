@@ -18,6 +18,7 @@ Route::get('/novo/', function() {
 });
 
 Route::get('/usuarios', [UserController::class, 'index']);
+Route::get('/usuarios/{id}', [UserController::class, 'show']);
 
 require __DIR__.'/settings.php';
 
